@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class TypeInputController : MonoBehaviour
 {
 	public const string BOOK_PATH = "Texts/sisyphus";
-	public const string HIGHLIGHTED_CHARACTER = "<b><color=magenta><size=2>{0}</size></color></b>";
+	public const string HIGHLIGHTED_CHARACTER = "<b><color=magenta>{0}</color></b>";
 	int AMOUNT_RANDOM_CHARACTERS_PER_LINE = 1;
 
 	public Text label;
