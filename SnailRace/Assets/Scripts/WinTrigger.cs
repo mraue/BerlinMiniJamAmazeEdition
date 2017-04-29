@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 public class WinTrigger : MonoBehaviour
-{
+{	
 	public UnityEvent onWin;
 
 	bool _won;
