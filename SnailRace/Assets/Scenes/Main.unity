@@ -872,7 +872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45518b1a4f4f4760a9f219caee92e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMax: 40
+  speedMax: 30
   wheelContainer: {fileID: 86583330}
   speedController: {fileID: 1973682919}
 --- !u!1 &1077152130
@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedIncrease: 0.03
-  friction: 0.1
+  friction: 0.2
   image: {fileID: 444049304}
   currentSpeed: 0
 --- !u!4 &1973682920
