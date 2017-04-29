@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class TypeInputController : MonoBehaviour
 {
-	public const string BOOK_PATH = "Texts/jule_verne_around_the_moon";
+	public const string BOOK_PATH = "Texts/sisyphus";
 	public const string HIGHLIGHTED_CHARACTER = "<b><color=magenta>{0}</color></b>";
 
 	public Text label;
@@ -72,7 +72,7 @@ public class TypeInputController : MonoBehaviour
 	string GetFormattedLine(string line, int index)
 	{
 		var character = _line[index];
-		character = character == ' ' ? '_' : character;
+		character = character == ' ' ? ' ' : character;
 		return _line.Substring(0, index)
 			        + string.Format(HIGHLIGHTED_CHARACTER, character)
 					+ _line.Substring(index + 1, _line.Length - index - 1);
