@@ -1,0 +1,6 @@
+-Start and finish
+-Ground
+-Slime tile (Or particle system)
+-Snail
+-Snail poop
+-Decoration
