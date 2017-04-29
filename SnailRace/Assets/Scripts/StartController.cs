@@ -6,6 +6,7 @@ using DG.Tweening;
 public class StartController : MonoBehaviour
 {
 	public CanvasGroup canvasGroup;
+	public Animator poopAnimation;
 
 	bool _acceptingInput = true;
 
@@ -14,7 +15,8 @@ public class StartController : MonoBehaviour
 		if (_acceptingInput)
 		{
 			_acceptingInput = false;
-			canvasGroup.DOFade(0f, 1f).SetEase(Ease.Linear).OnComplete(() => { canvasGroup.gameObject.SetActive(false); });
+			canvasGroup.DOFade(0f, 1f).SetEase(Ease.Linear).SetDelay(1f).OnComplete(() => { canvasGroup.gameObject.SetActive(false); });
+			poopAnimation.enabled = true;
 		}
 	}
 
