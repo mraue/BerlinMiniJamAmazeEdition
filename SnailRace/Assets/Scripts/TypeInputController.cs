@@ -21,10 +21,12 @@ public class TypeInputController : MonoBehaviour
 	string _currentCharacter;
 	string _displayLine;
 
+	TextAsset _asset;
+
 	void Awake()
 	{
-		var asset = Resources.Load(BOOK_PATH) as TextAsset;
-		_reader = new StringReader(asset.text);
+		_asset = Resources.Load(BOOK_PATH) as TextAsset;
+		_reader = new StringReader(_asset.text);
 	}
 
 	void Update()
@@ -56,12 +58,16 @@ public class TypeInputController : MonoBehaviour
 		_line = null;
 
 		while (string.IsNullOrEmpty(_line))
-		{			
-			_line = _reader.ReadLine().Trim();
+		{
+			_line = _reader.ReadLine();
 
 			if (_line == null)
 			{
-				break;
+				_reader = new StringReader(_asset.text);
+			}
+			else
+			{
+				_line.Trim();
 			}
 		}
 
