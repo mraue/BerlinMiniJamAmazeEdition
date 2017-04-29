@@ -7,6 +7,7 @@ public class StartController : MonoBehaviour
 {
 	public CanvasGroup canvasGroup;
 	public Animator poopAnimation;
+	public GameObject poopSound;
 
 	public GameObject[] inGame;
 
@@ -17,6 +18,7 @@ public class StartController : MonoBehaviour
 		if (_acceptingInput)
 		{
 			_acceptingInput = false;
+			poopSound.SetActive(true);
 			canvasGroup.DOFade(0f, 1f).SetEase(Ease.Linear).SetDelay(1f).OnComplete(() =>
 			{
 				canvasGroup.gameObject.SetActive(false);
