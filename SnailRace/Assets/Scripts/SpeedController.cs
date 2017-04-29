@@ -22,12 +22,16 @@ public class SpeedController : MonoBehaviour
 
 	void Update()
 	{
+		_idleTime += Time.deltaTime;
+
 		currentSpeed -= _currentFriction * Time.deltaTime;
 		currentSpeed = Mathf.Max(0f, currentSpeed);
+
 		image.fillAmount = currentSpeed;
+
 		if (_idleTime > 1f)
 		{
-			_currentFriction = friction * 3f;
+			_currentFriction = friction * 4f;
 		}
 	}
 }

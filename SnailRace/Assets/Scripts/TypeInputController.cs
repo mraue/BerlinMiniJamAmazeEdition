@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ public class TypeInputController : MonoBehaviour
 {
 	public const string BOOK_PATH = "Texts/sisyphus";
 	public const string HIGHLIGHTED_CHARACTER = "<b><color=magenta>{0}</color></b>";
+	int AMOUNT_RANDOM_CHARACTERS_PER_LINE = 2;
 
 	public Text label;
 	public UnityEvent onCharacterTyped;
@@ -22,6 +24,8 @@ public class TypeInputController : MonoBehaviour
 	string _displayLine;
 
 	TextAsset _asset;
+
+	int _amountLines;
 
 	void Awake()
 	{
@@ -68,11 +72,30 @@ public class TypeInputController : MonoBehaviour
 			else
 			{
 				_line.Trim();
+				_amountLines += 1;
+				RandomizeLine(_amountLines);
 			}
 		}
 
 		_currentIndex = 0;
 		label.text = GetFormattedLine(_line, _currentIndex);
+	}
+
+
+	void RandomizeLine(int amount)
+	{
+		var stringBuilder = new StringBuilder(_line);
+
+		for (int i = 0; i < amount * AMOUNT_RANDOM_CHARACTERS_PER_LINE; i++)
+		{
+			var first = UnityEngine.Random.Range(0, stringBuilder.Length);
+			var second = UnityEngine.Random.Range(0, stringBuilder.Length);
+			var tmp = stringBuilder[first];
+			stringBuilder[first] = stringBuilder[second];
+			stringBuilder[second] = tmp;
+		}
+
+		_line = stringBuilder.ToString();
 	}
 
 	string GetFormattedLine(string line, int index)

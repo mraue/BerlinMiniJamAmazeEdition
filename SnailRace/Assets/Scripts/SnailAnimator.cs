@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class SnailAnimator : MonoBehaviour
 {
-	public float minSpeed;
+	public float minSpeed = 0.1f;
 	public SpeedController speedController;
+	public Animator animator;
+
 	bool _isAnimating;
 
-	void Updated()
+	void Update()
 	{
-		if (speedController.currentSpeed < minSpeed && _isAnimating)
+		if (speedController.currentSpeed <= minSpeed && _isAnimating)
 		{
 			StopAnimation();
 		}
@@ -20,12 +22,14 @@ public class SnailAnimator : MonoBehaviour
 	}
 
 	void StopAnimation()
-	{
-		
+	{				
+		animator.enabled = false;
+		_isAnimating = false;
 	}
 
 	void StartAnimation()
-	{
-		
+	{		
+		animator.enabled = true;
+		_isAnimating = true;
 	}
 }
