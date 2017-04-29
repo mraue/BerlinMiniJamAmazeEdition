@@ -22,7 +22,7 @@ public class WinController : MonoBehaviour
 		mainCamera.DOOrthoSize(18f, CAMERA_ANIMATION_DURATION).SetEase(Ease.Linear);
 		mainCamera.transform.DOMoveX(26f, CAMERA_ANIMATION_DURATION).SetEase(Ease.Linear); ;
 		mainCamera.transform.DOMoveY(0f, CAMERA_ANIMATION_DURATION).SetEase(Ease.Linear); ;
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(3f + CAMERA_ANIMATION_DURATION);
 		content.SetActive(false);
 		UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Main");
 		UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Main");
