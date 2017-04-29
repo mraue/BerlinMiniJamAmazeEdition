@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class TypeInputController : MonoBehaviour
 {
 	public const string BOOK_PATH = "Texts/sisyphus";
-	public const string HIGHLIGHTED_CHARACTER = "<b><color=magenta>{0}</color></b>";
+	public const string HIGHLIGHTED_CHARACTER = "<b><color=magenta><size=2>{0}</size></color></b>";
 	int AMOUNT_RANDOM_CHARACTERS_PER_LINE = 1;
 
 	public Text label;
@@ -101,7 +101,7 @@ public class TypeInputController : MonoBehaviour
 	string GetFormattedLine(string line, int index)
 	{
 		var character = _line[index];
-		character = character == ' ' ? ' ' : character;
+		character = character == ' ' ? '_' : character;
 		return _line.Substring(0, index)
 			        + string.Format(HIGHLIGHTED_CHARACTER, character)
 					+ _line.Substring(index + 1, _line.Length - index - 1);
