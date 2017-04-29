@@ -11,7 +11,7 @@ public class TypeInputController : MonoBehaviour
 {
 	public const string BOOK_PATH = "Texts/sisyphus";
 	public const string HIGHLIGHTED_CHARACTER = "<b><color=magenta>{0}</color></b>";
-	int AMOUNT_RANDOM_CHARACTERS_PER_LINE = 2;
+	int AMOUNT_RANDOM_CHARACTERS_PER_LINE = 1;
 
 	public Text label;
 	public UnityEvent onCharacterTyped;
@@ -72,8 +72,8 @@ public class TypeInputController : MonoBehaviour
 			else
 			{
 				_line.Trim();
-				_amountLines += 1;
 				RandomizeLine(_amountLines);
+				_amountLines += 1;
 			}
 		}
 
