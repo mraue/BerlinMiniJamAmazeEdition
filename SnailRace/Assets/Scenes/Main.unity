@@ -8379,7 +8379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedIncrease: 0.03
-  friction: 0.15
+  friction: 0.13
   image: {fileID: 444049304}
   currentSpeed: 0
 --- !u!4 &1973682920
